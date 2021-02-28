@@ -1,5 +1,9 @@
+package application;
+
 import java.util.ArrayList;
 import java.util.List;
+import utils.Duenio;
+import utils.Gato;
 
 public class App {
     public static void main(String[] args) {
@@ -8,7 +12,7 @@ public class App {
         Duenio duenio1 = new Duenio();
 
         duenio1.id = "163546";
-        duenio1.nombre = "Uayeb";
+        duenio1.name = "Uayeb";
 
         //// creamos a los gatos
         Gato migato1 = new Gato();
@@ -46,43 +50,4 @@ public class App {
 
 
     }
-}
-
-
-class Gato{
-
-    Duenio duenio;
-    String nombre;
-    float peso;
-    short edad;
-    String genero;
-    double likelihood_die;
-
-    public Gato(){ //CONSTRUCTOR
-        System.out.println("miauuuuu que bien estar vivo!!! dame un nombre, por favor");
-    }
-
-    public String saludo(){
-        String misaludo = new String();
-        misaludo = "Hola, mi nombre es: " + this.nombre + ", y mi dueño es: " + this.duenio.nombre;
-        return misaludo;
-    }
-
-    public void  compute_die_likelihood(){
-        /* aqui relacionado con logit regression will happen */
-        this.likelihood_die = 0.1;
-    }
-
-}
-
-class Duenio{
-
-    String nombre;
-    String id;
-    List<Gato> mascotas;
-
-    public Duenio(){ //CONSTRUCTOR.
-        this.mascotas = new ArrayList<Gato>();
-    }
-
 }
